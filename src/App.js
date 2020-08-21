@@ -1,8 +1,26 @@
-import React from 'react';
-
+import React,{useState} from 'react';
+import Resultado from './components/Resultado';
 import './assets/css/App.css';
 
 function App() {
+
+  const [datos,setDatos]=useState({
+    marca:'',
+    año:'',
+    plan:''
+  })
+
+  const {marca,año,plan}=datos;
+
+  const Set_Informacion = e => {
+    setDatos(
+      {
+        ...datos,
+        [e.target.name]: e.target.value
+      }
+    );
+  }
+  
   return (
     <div className="App">
 
@@ -20,7 +38,7 @@ function App() {
 
             <section>
               <label><strong>Marca</strong></label>
-              <select name="marca">
+              <select name="marca" value={marca} onChange={Set_Informacion}>
                   <option>Audi</option>
                   <option>Alfa Romeo</option>
                   <option>Aston Martin</option>
@@ -36,7 +54,7 @@ function App() {
 
             <section>
               <label><strong>Año</strong></label>
-              <select name="año">
+              <select name="año" value={año} onChange={Set_Informacion}>
                   <option value="1999">1999</option>
                   <option value="2000">2000</option>
                   <option value="2001">2001</option>
@@ -51,21 +69,23 @@ function App() {
 
             <section className="section_check">
               <label><strong>Plan</strong></label>
-              <input type="checkbox" name="terceros" value="terceros"/>
-              <label  for="terceros">Terceros</label>
-              <input type="checkbox" name="riesgo" value="riesgo"/>
-              <label for="riesgo">Cobertura Completa</label>
+              <input type="checkbox" name="plan" value='terceros' onChange={Set_Informacion} checked={plan === 'terceros'}/>
+              <label htmlFor="terceros">Terceros</label> 
+              <input type="checkbox" name="plan" value='riesgo' onChange={Set_Informacion} checked={plan === 'riesgo'}/>
+              <label htmlFor="riesgo">Cobertura Completa</label>
             </section>
 
             <button type="submit">Calcular</button>
 
         </form>
 
-        </div>
+        <Resultado/>
 
       </div>
-
+     
     </div>
+
+  </div>
   );
 }
 
