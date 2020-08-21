@@ -4,6 +4,7 @@ import '../assets/css/resultado.css';
 const Resultado= () => {
 
     return(
+
         <div className="resultado_Content">
             Informe consulta:
             <div className="consulta_content">
@@ -14,6 +15,7 @@ const Resultado= () => {
 
             </div>
         </div>
+        
     )
 }
 
