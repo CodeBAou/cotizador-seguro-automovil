@@ -19,7 +19,7 @@ function App() {
           <form>
 
             <section>
-              <label>Marca</label>
+              <label><strong>Marca</strong></label>
               <select name="marca">
                   <option>Audi</option>
                   <option>Alfa Romeo</option>
@@ -35,7 +35,7 @@ function App() {
             </section>
 
             <section>
-              <label>Año</label>
+              <label><strong>Año</strong></label>
               <select name="año">
                   <option value="1999">1999</option>
                   <option value="2000">2000</option>
@@ -49,14 +49,16 @@ function App() {
               </select>
             </section>
 
-            <section>
-              <label>Plan</label>
+            <section className="section_check">
+              <label><strong>Plan</strong></label>
               <input type="checkbox" name="terceros" value="terceros"/>
               <label  for="terceros">Terceros</label>
               <input type="checkbox" name="riesgo" value="riesgo"/>
               <label for="riesgo">Cobertura Completa</label>
             </section>
+
             <button type="submit">Calcular</button>
+
         </form>
 
         </div>

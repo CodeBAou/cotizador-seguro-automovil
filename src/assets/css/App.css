@@ -82,7 +82,6 @@ form{
   background:rgba(0, 0, 0,0.05);
   box-shadow:0px 2px 3px black;
   min-height:150px;
-
 }
 
 section{
@@ -163,7 +162,7 @@ button:active{
 
   header{
 
-    height:10vh;
+    height:8.2vh;
   }
 
   .content_form{
@@ -179,20 +178,47 @@ button:active{
 
   h2{
 
+    height:none;
+    padding-top:5px;
+    padding-bottom:5px;
     font-size:1.5em;
   }
 
+  button{
+
+    margin:0 auto;
+    margin-bottom:5px;
+    height:40px;
+  }
+
   select{
+
+    height:30px;
     margin-right:25%;
   }
 
   input{
+
     margin-right:10%;
     margin-bottom:5%;
   }
 
+  label{
+
+    font-size:2.8vw;
+    margin-right:2.5%;
+  }
+
   section{
 
-    width:100%;
+    margin:0 auto;
+    margin-top:2%;
+    width:80%;
   }
+
+  .section_check{
+
+    width:98%;
+  }
+
 }
