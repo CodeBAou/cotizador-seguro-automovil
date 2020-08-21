@@ -14,9 +14,50 @@ function App() {
         
         <div className="content_form">
 
-              <h2>Calcula tu Seguro</h2>
+          <h2>Calcula tu Seguro</h2>
+          
+          <form>
 
-             
+            <section>
+              <label>Marca</label>
+              <select name="marca">
+                  <option>Audi</option>
+                  <option>Alfa Romeo</option>
+                  <option>Aston Martin</option>
+                  <option>BMW</option>
+                  <option>Seat</option>
+                  <option>Suzuki</option>
+                  <option >Volvo</option>
+                  <option >Saab</option>
+                  <option>Mercedes</option>
+              </select >
+              <br/>
+            </section>
+
+            <section>
+              <label>Año</label>
+              <select name="año">
+                  <option value="1999">1999</option>
+                  <option value="2000">2000</option>
+                  <option value="2001">2001</option>
+                  <option value="2002">2002</option>
+                  <option value="2003">2003</option>
+                  <option value="2004">2004</option>
+                  <option value="2005">2005</option>
+                  <option value="2006">2006</option>
+                  <option value="2007">2007</option>
+              </select>
+            </section>
+
+            <section>
+              <label>Plan</label>
+              <input type="checkbox" name="terceros" value="terceros"/>
+              <label  for="terceros">Terceros</label>
+              <input type="checkbox" name="riesgo" value="riesgo"/>
+              <label for="riesgo">Cobertura Completa</label>
+            </section>
+            <button type="submit">Calcular</button>
+        </form>
 
         </div>
 

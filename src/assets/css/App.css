@@ -67,10 +67,63 @@ h2{
   background: rgb(224, 223, 224);
 }
 
+form{
+
+  width:100%;
+  background:rgba(0, 0, 0,0.05);
+  box-shadow:0px 2px 3px black;
+  min-height:150px;
+
+}
+
+section{
+
+  width:70%;
+  text-align:right;
+  margin-top:3%;
+}
+
+label{ 
+  font-size:1em;
+}
+
+select{
+
+  margin-left:2%;
+  width:50%;
+  height:30px;
+  background:rgba(159, 0, 0,0.8) ;
+  color:white; 
+  border:none;
+  border-radius:10px;
+}
+
+option{
+
+  background:rgba(62, 2, 2,0.6);
+  border:none;
+}
+
+input{
+
+  margin-left:4%;
+}
+
+button{
+
+  margin-top:1%;
+  margin-bottom:8px;
+  width:200px;
+  border-radius:25px;
+  box-shadow:3px 2px 5px black;
+  color:rgba(159, 0, 0,0.80);
+  opacity:0.9;
+}
+
 @media(max-width:768px){
 
   header{
-    
+
     height:10vh;
   }
 
@@ -90,4 +143,17 @@ h2{
     font-size:1.5em;
   }
 
+  select{
+    margin-right:25%;
+  }
+
+  input{
+    margin-right:10%;
+    margin-bottom:5%;
+  }
+
+  section{
+
+    width:100%;
+  }
 }
