@@ -1,6 +1,8 @@
 import React,{useState} from 'react';
 import Resultado from './components/Resultado';
 import './assets/css/App.css';
+import {calculo_Año} from './cotizador';
+import {calculo_marca} from './cotizador';
 
 function App() {
 
@@ -65,11 +67,17 @@ function App() {
     }
 
     else
-
     {
-      console.log("hecho");
+      console.log(calculo_Año(año));
+      console.log(calculo_marca(marca));
     }
 
+  }
+
+  const cotizar = () => {
+
+      let resultado = calculo_marca(marca) * calculo_Año(año);
+      
   }
 
   return (
