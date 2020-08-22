@@ -8,7 +8,7 @@ const Resultado= () => {
         <div className="resultado_Content">
             Informe consulta:
             <div className="consulta_content">
-
+                
             </div>
             Otra propuesta:
             <div className="propuesta_content">
