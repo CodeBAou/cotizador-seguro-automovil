@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import '../assets/css/resultado.css';
 import Consulta from '../components/Consulta';
+import PropTypes from 'prop-types';
 
 const Resultado= ({propuestas,datos}) => {
 
@@ -24,23 +25,30 @@ const Resultado= ({propuestas,datos}) => {
                
             </div>
 
-            Otra propuesta:
+            Tambien te podemos ofrecer:
             <div className="propuesta_content">
                 {
-                        propuestas.consulta != null
-                        ?   <Consulta 
-                                marca={datos.marca}
-                                año={datos.año}
-                                plan={ datos.plan == 'terceros' ? 'riesgo' : 'terceros'}
-                                propuesta={propuestas.propuesta}
-                            />
+                    propuestas.consulta != null
+                    ?   <Consulta 
+                            marca={datos.marca}
+                            año={datos.año}
+                            plan={ datos.plan == 'terceros' ? ' Todo Riesgo' : 'terceros'}
+                            propuesta={propuestas.propuesta}
+                        />
 
-                        :<p>...</p>
+                    :<p>...</p>
                 }
             </div>
         </div>
         
     )
+}
+
+Consulta.propTypes={
+    marca:PropTypes.string,
+    año:PropTypes.string,
+    plan:PropTypes.string,
+    propuesta:PropTypes.object
 }
 
 export default Resultado;

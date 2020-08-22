@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import Resultado from './components/Resultado';
 import './assets/css/App.css';
 import {calculo_Año, calculo_marca, calculo_Plan} from './cotizador';
+import PropTypes from 'prop-types';
 
 function App() {
 
@@ -131,7 +132,7 @@ function App() {
               <label><strong>Marca</strong></label>
 
               <select name="marca" value={marca} onChange={Set_Informacion} >
-
+                  <option value=''>--- Seleccione ---</option>
                   <option>Audi</option>
                   <option>Alfa Romeo</option>
                   <option>Aston Martin</option>
@@ -153,7 +154,7 @@ function App() {
               <label><strong>Año</strong></label>
 
               <select name="año" value={año} onChange={Set_Informacion}>
-
+                  <option value=''>--- Seleccione ---</option>
                   <option value="1999">1999</option>
                   <option value="2000">2000</option>
                   <option value="2001">2001</option>
@@ -193,6 +194,11 @@ function App() {
 
   </div>
   );
+}
+
+Resultado.propTypes = {
+  propuestas:PropTypes.object,
+  datos:PropTypes.object
 }
 
 export default App;

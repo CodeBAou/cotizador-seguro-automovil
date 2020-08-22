@@ -13,7 +13,7 @@
 @keyframes Click_BTN_hover_Animation{
 
   from {width:200px;}
-  to {width:90%;}
+  to {width:54%;}
 }
 
 .App {
@@ -156,7 +156,7 @@ button:hover{
 
   animation-name: Click_BTN_hover_Animation;
   animation-fill-mode: forwards;
-  animation-duration: 3s;
+  animation-duration: 1.8s;
 }
 
 button:active{

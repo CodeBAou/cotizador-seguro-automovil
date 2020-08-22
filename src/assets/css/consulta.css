@@ -1,13 +1,13 @@
 .content{
 
     background: white;
-    box-shadow: 2px 5px 6px black;
+    box-shadow: 2px 5px 12px black;
     width:97%;
-    height:70%;
+    height:75%;
     margin:0 auto;
     padding:5px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
     color:black;
 }
 
