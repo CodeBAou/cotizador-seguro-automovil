@@ -1,10 +1,10 @@
 export function calculo_Año(año){
 
-  let resultado = 2000;
-  let diferencia_año = new Date().getFullYear() - año;
-  resultado = resultado - ((diferencia_año*3) * resultado) / 100;
+  let base = 2000;
+  let diferencia_ano = new Date().getFullYear() - base;
+  let resultado=(diferencia_ano * 3) / 100;
+  console.log(`calculo Años: ${resultado}`);
   return resultado;
-
 }
 
 export function calculo_marca(marca){
@@ -49,6 +49,31 @@ export function calculo_marca(marca){
         incremento=1.72;
         break;
     }
-
+    console.log(`Calculo Marca: ${incremento}`);
     return incremento;
+  }
+
+  export function calculo_Plan(plan){
+
+    let data={
+
+      consulta:0,
+      propuesta:0
+    }
+
+    switch(plan)
+    {
+      case 'terceros':
+        data.consulta = 10;
+        data.propuesta=20;
+        break;
+
+      case 'riesgo':
+        data.consulta = 10;
+        data.propuesta = 20;
+        break;
+    }
+
+    console.log(`Data plan: ${data.consulta}`);
+    return data;
   }
