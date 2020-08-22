@@ -79,9 +79,9 @@ function App() {
 
   const cotizar = () => {
 
-      let cotizacion = calculo_marca(marca) * calculo_Año(año);
-      cotizacion= (resultado * calculo_Plan(plan).consulta).toFixed(2);
-      return cotizacion;
+    let cotizacion = calculo_marca(marca) * calculo_Año(año);
+    cotizacion= (cotizacion * calculo_Plan(plan).consulta).toFixed(2);
+    return cotizacion;
   }
 
   
