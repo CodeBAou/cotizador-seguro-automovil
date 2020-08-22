@@ -49,14 +49,15 @@ export function calculo_marca(marca){
         incremento=1.72;
         break;
     }
+
     console.log(`Calculo Marca: ${incremento}`);
     return incremento;
   }
 
   export function calculo_Plan(plan){
 
-    let data={
-
+    let data=
+    {
       consulta:0,
       propuesta:0
     }
@@ -64,13 +65,15 @@ export function calculo_marca(marca){
     switch(plan)
     {
       case 'terceros':
+
         data.consulta = 10;
         data.propuesta=20;
         break;
 
       case 'riesgo':
-        data.consulta = 10;
-        data.propuesta = 20;
+
+        data.consulta = 20;
+        data.propuesta = 10;
         break;
     }
 

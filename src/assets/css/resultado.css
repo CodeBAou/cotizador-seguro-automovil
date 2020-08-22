@@ -6,10 +6,6 @@
     box-shadow:0px 8px 6px black;
     text-align:left;
     color:white;
-    overflow:scroll;
-    overflow-x: hidden;
-    scrollbar-color: rgb(82, 1, 1) rgba(0, 0, 0, 1);
-    scrollbar-width: thin;
 }
 
 .consulta_content{

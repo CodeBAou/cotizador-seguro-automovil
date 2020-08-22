@@ -1,0 +1,45 @@
+.content{
+
+    background: white;
+    box-shadow: 2px 5px 6px black;
+    width:97%;
+    height:70%;
+    margin:0 auto;
+    padding:5px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    color:black;
+}
+
+ul{
+    width:70%;
+    color:black;
+    font-size:18px;
+    float:left;
+}
+
+ul li{
+    display:inline;
+    margin-left:4%;
+}
+
+.precio{
+    color:red;
+    font-size:30px;
+}
+
+@media(max-width:768px){
+    ul{
+        font-size:12px;
+        width:60%;
+        float:left;
+    }
+    ul li {
+        margin-left:2%;
+    }
+    .precio{
+        font-size:18px;
+        margin-top:3%;
+        float:left;
+    }
+}
