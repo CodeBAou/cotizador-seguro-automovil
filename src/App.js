@@ -5,20 +5,34 @@ import {calculo_Año, calculo_marca, calculo_Plan} from './cotizador';
 
 function App() {
 
-  const [datos,setDatos] = useState({
+  const [prima,setPrimaData] = useState(
+    {
+      gastos_administrativos_anuales:
+        {
+          gestión_interna_anual:52,
+          gestión_externa_anual:36
+        },
+      total_tributos_complementarios:21 
+    }
+  );
 
-    marca:'',
-    año:'',
-    plan:''
-  })
+  const [datos,setDatos] = useState(
+    {
+      marca:'',
+      año:'',
+      plan:''
+    }
+  );
 
   const {marca,año,plan}=datos;
 
-  const [resultadoData,setResultado] = useState({
-
-    consulta:0,
-    propuesta:0,
-  })
+  const [propuestas,setPropuestas] = useState(
+    {
+      plan:plan,
+      consulta:null,
+      propuesta:null,
+    }
+  );
 
   const Set_Informacion = e => {
 
@@ -31,12 +45,10 @@ function App() {
     }
   
     setDatos(
-
       {
         ...datos,
         [e.target.name]: e.target.value
       }
-
     );
 
   }
@@ -48,7 +60,6 @@ function App() {
     if(marca == '' || año == '' || plan == '')
 
     {
-
       if(marca == '')
 
       {
@@ -67,7 +78,6 @@ function App() {
         document.getElementById("L_terceros").style.color="red";
         document.getElementById("L_riesgo").style.color="red";
       }
-
     }
 
     else
@@ -78,10 +88,26 @@ function App() {
   }
 
   const cotizar = () => {
-
+    
+    let result_consulta=0;
+    let result_propuesta=0;
     let cotizacion = calculo_marca(marca) * calculo_Año(año);
-    cotizacion= (cotizacion * calculo_Plan(plan).consulta).toFixed(2);
-    return cotizacion;
+    let total_prima = ((prima.gastos_administrativos_anuales.gestión_externa_anual + prima.gastos_administrativos_anuales.gestión_interna_anual) * prima.total_tributos_complementarios)/100 ;
+    
+    result_consulta = (cotizacion * calculo_Plan(plan).consulta);
+    result_propuesta = (cotizacion * calculo_Plan(plan).propuesta);
+    result_consulta = total_prima * result_consulta;
+    result_propuesta = total_prima * result_propuesta;
+    
+    setPropuestas(
+      {
+        plan:plan,
+        consulta:result_consulta.toFixed(2),
+        propuesta:result_propuesta.toFixed(2)
+      }
+    )
+    
+
   }
 
   
@@ -156,7 +182,10 @@ function App() {
 
         </form>
 
-        <Resultado/>
+        <Resultado
+          propuestas={propuestas}
+          datos={datos}
+        />
 
       </div>
      
