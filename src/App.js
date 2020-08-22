@@ -1,20 +1,24 @@
 import React,{useState} from 'react';
 import Resultado from './components/Resultado';
 import './assets/css/App.css';
-import {calculo_Año} from './cotizador';
-import {calculo_marca} from './cotizador';
+import {calculo_Año, calculo_marca, calculo_Plan} from './cotizador';
 
 function App() {
 
-  const [datos,setDatos]=useState({
+  const [datos,setDatos] = useState({
 
     marca:'',
     año:'',
     plan:''
-
   })
 
   const {marca,año,plan}=datos;
+
+  const [resultadoData,setResultado] = useState({
+
+    consulta:0,
+    propuesta:0,
+  })
 
   const Set_Informacion = e => {
 
@@ -68,18 +72,19 @@ function App() {
 
     else
     {
-      console.log(calculo_Año(año));
-      console.log(calculo_marca(marca));
+      cotizar();
     }
 
   }
 
   const cotizar = () => {
 
-      let resultado = calculo_marca(marca) * calculo_Año(año);
-      
+    let cotizacion = calculo_marca(marca) * calculo_Año(año);
+    cotizacion= (cotizacion * calculo_Plan(plan).consulta).toFixed(2);
+    return cotizacion;
   }
 
+  
   return (
     <div className="App">
 
